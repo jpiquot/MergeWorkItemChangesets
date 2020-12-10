@@ -1,6 +1,6 @@
-# Child Tasks Template Azure DevOps extension
+# Merge Work Item Changesets
 
-[![Build Status](https://dev.azure.com/fiveforty/DevOps/_apis/build/status/ChildTaskTemplate?branchName=master)](https://dev.azure.com/fiveforty/DevOps/_build/latest?definitionId=17&branchName=master)
+[![Build Status](https://dev.azure.com/fiveforty/DevOps/_apis/build/status/MergeWorkItemChangesets?branchName=master)](https://dev.azure.com/fiveforty/DevOps/_build/latest?definitionId=17&branchName=master)
 
 This project generates an [Azure DevOps extension](https://docs.microsoft.com/en-us/azure/devops/extend/overview?view=vsts).
 
