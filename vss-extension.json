@@ -1,0 +1,106 @@
+{
+	"manifestVersion": 1,
+	"id": "MergeWorkItemChangesets",
+	"version": "1.0.0",
+	"name": "Merge Work Item Changesets",
+	"public": true,
+	"publisher": "Fiveforty",
+	"description": "This extension enables merging work item changesets from a development/feature branch to the main/trunk branch.",
+	"targets": [
+		{
+			"id": "Microsoft.VisualStudio.Services"
+		}
+	],
+	"demands": [ "api-version/5.1" ],
+	"icons": {
+		"default": "static/fiveforty.png"
+	},
+	"content": {
+		"details": {
+			"path": "content_details.md"
+		},
+		"license": {
+			"path": "LICENSE"
+		}
+	},
+	"categories": [ "Azure Boards" ],
+	"scopes": [ "vso.work_write" ],
+	"contributions": [
+		{
+			"id": "merge-work-item-changesets-action",
+			"type": "ms.vss-web.action",
+			"description": "Merge the changesets to a main/trunk branch.",
+			"targets": [
+				"ms.vss-work-web.work-item-context-menu",
+				"ms.vss-work-web.query-result-work-item-menu",
+				"ms.vss-work-web.work-item-toolbar-menu",
+				"ms.vss-work-web.backlog-item-menu"
+			],
+			"properties": {
+				"text": "Merge changesets",
+				"toolbarText": "Merge changesets to main/trunk branch",
+				"title": "Merge all work item changesets to the main/trunk branch.",
+				"uri": "dist/extension.html"
+			}
+		},
+		{
+			"id": "merge-work-item-changesets-settings",
+			"type": "ms.vss-web.hub",
+			"targets": [ "ms.vss-web.project-admin-hub-group" ],
+			"includes": [
+				"ms.vss-tfs-web.tfs-page-data-service",
+				"ms.vss-features.host-navigation-service",
+				"ms.vss-features.extension-data-service",
+				"ms.vss-features.host-dialog-service"
+			],
+			"properties": {
+				"name": "Merge Changesets",
+				"uri": "dist/settings.html",
+				"supportsMobile": true
+			}
+		}
+	],
+	"files": [
+		{
+			"path": "dist",
+			"addressable": true
+		},
+		{
+			"path": "static",
+			"addressable": true
+		}
+	],
+	"links": {
+		"support": {
+			"uri": "mailto:jpiquot@fiveforty.fr"
+		},
+		"home": {
+			"uri": "https://github.com/jpiquot/MergeWorkItemChangesets"
+		},
+		"getstarted": {
+			"uri": "https://github.com/jpiquot/MergeWorkItemChangesets"
+		},
+		"learn": {
+			"uri": "https://github.com/jpiquot/MergeWorkItemChangesets"
+		},
+		"repository": {
+			"uri": "https://github.com/jpiquot/MergeWorkItemChangesets"
+		},
+		"issues": {
+			"uri": "https://github.com/jpiquot/MergeWorkItemChangesets/issues"
+		}
+	},
+	"tags": [ "Task", "Template", "Create" ],
+	"repository": {
+		"type": "git",
+		"uri": "https://github.com/jpiquot/MergeWorkItemChangesets.git"
+	},
+	"screenshots": [
+		{
+			"path": "static/setup_screen.png"
+		},
+		{
+			"path": "static/add_child_tasks_screen.png"
+		}
+	]
+}
