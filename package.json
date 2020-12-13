@@ -13,17 +13,13 @@
 	},
 	"scripts": {
 		"clean": "rimraf ./dist ./bin",
-		"compile": "webpack --mode production",
-		"compile:dev": "webpack --mode development",
-		"build": "npm run clean && npm run compile",
-		"build:dev": "npm run clean && npm run compile:dev",
-		"postbuild:dev": "npm run package:dev",
-		"package": "tfx extension create --output-path ./bin",
-		"package:dev": "tfx extension create --output-path ./bin --manifest-globs vss-extension-dev.json",
-		"publish": "tfx extension publish",
-		"start:dev": "webpack-dev-server",
-		"edge_debug": "\"C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe\" msedge --remote-debugging-port=9222\"",
-		"chrome_debug": "chrome.exe --remote-debugging-port=9222"
+		"compile": "npm run clean && webpack --mode production",
+		"compile:dev": "npm run clean && webpack --mode development",
+		"package": "npm run compile && tfx extension create --output-path ./bin --manifest-globs vss-extension.json",
+		"package:dev": "npm run compile:dev && tfx extension create --output-path ./bin --manifest-globs vss-extension.json --overrides-file vss-extension-dev.json",
+		"publish": "npm run compile && tfx extension publish --output-path ./bin --manifest-globs vss-extension.json",
+		"publish:dev": "npm run compile:dev && tfx extension publish --output-path ./bin --manifest-globs vss-extension.json --overrides-file vss-extension-dev.json",
+		"start:dev": "webpack-dev-server --mode development"
 	},
 	"dependencies": {},
 	"devDependencies": {

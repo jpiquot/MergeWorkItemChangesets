@@ -39,7 +39,7 @@ class Program {
         SDK.register(SDK.getContributionId(), () => {
             return {
                 execute: async (context: any): Promise<void> => {
-                    await new MergeChangesetsService(Program.settings).execute(context)
+                    await new MergeChangesetsService(Program.settings, context.Id).execute(context)
                 },
             }
         })
