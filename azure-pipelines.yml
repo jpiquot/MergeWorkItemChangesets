@@ -12,7 +12,7 @@ jobs:
     vmImage: 'ubuntu-16.04'
   steps:
     - checkout: self
-      clean: true
+      clean: "true"
 
     - task: NodeTool@0
       inputs:

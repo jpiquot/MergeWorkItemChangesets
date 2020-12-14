@@ -33,6 +33,8 @@ class MergeChangesetsService {
             console.warn("The main/trunk branch is undefined.")
             return
         }
+        const wi = await this.getCurrentWorkItem()
+        console.info("Merging Work Item with Id=" + wi.id)
 
     }
     public getCurrentWorkItem(): Promise<WorkItem> {
